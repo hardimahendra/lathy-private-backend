@@ -10,7 +10,7 @@ dotenv.config();
 const app = express();
 
 connectDB(app.listen(6969, () => {
-    console.log('Running at port 5000')
+    console.log('Running at port 6969')
 }));
 
 app.use(bodyParser.json())
