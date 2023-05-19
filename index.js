@@ -9,7 +9,7 @@ import connectDB from './src/databases/connection.js';
 dotenv.config();
 const app = express();
 
-connectDB(app.listen(5000, () => {
+connectDB(app.listen(6969, () => {
     console.log('Running at port 5000')
 }));
 
