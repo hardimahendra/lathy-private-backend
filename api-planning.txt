@@ -1,0 +1,100 @@
+Standar API 
+
+{root.api}/{version}/{grouping}/{endpoint}
+
+SAMPLE:
+https://buds-api.kabayancoding.com/v1/auth/register
+
+Standar Status Response
+
+200 - OK                --> Call API Success
+201 - CREATED           --> Post Success
+400 - BAD REQUEST       --> Error on Client Side (Wrong Input)
+401 - UNAUTHORIZED      --> User not authorized to the request
+403 - FORBIDDEN         --> User not allowed to access
+404 - NOT FOUND         --> Request Endpoint Not Found
+500 - BAD REQUEST       --> Error on Server Side
+502 - BAD GATEWAY       --> Invalid Response From Antoher Request
+
+GROUP: Authentication
+
+[1] - Register 
+{root.api}/{version}/auth/register
+
+/siswa
+req: 
+{
+    "nameSiswa" : "yourname",
+    "emailSiswa": "yourSiswa@gmail.com",
+    "jenisKelamin": "male/female",
+    "schoolSiswa": "your school",
+    "passSiswa": "your pass"
+}
+
+/guru
+req: 
+{
+    "nameGuru" : "yourname",
+    "emailGuru": "yourGuru@gmail.com",
+    "jenisKelamin": "male/female",
+    "schoolGuru": "your school",
+    "teachingHistory": "sma 1 jakarta",
+    "masteredLearning": "matematika",
+    "passGuru": "your pass"
+}
+
+/staff
+req: 
+{
+    "nameStaff" : "yourname",
+    "emailStaff": "yourStaff@gmail.com",
+    "jenisKelamin": "male/female",
+    "schoolStaff": "your school",
+    "job": "sma 1 jakarta",
+    "lengthOfWork": "matematika",
+    "passStaff": "your pass"
+}
+ 
+err-respons: 
+400 - Input yang anda masukan tidak valid 
+
+[2] - Login 
+{root.api}/{version}/auth/login
+
+/siswa && /guru && /staff
+req:
+{
+    "username": "your username",
+    "password": "your password",
+}
+
+
+GROUP: Private Course
+
+Only Admin:
+[-] - Tambah User
+[-] - Update User
+[-] - Delete User
+[-] - All action from User(Siswa, Guru, Staff);
+
+Flow Action Siswa:
+[0] - Register akun
+[1] - Login
+[2] - Pilih mata pelajaran
+[3] - Tentukan jadwal, ganti jadwal
+[4] - Pilih guru sesuai keinginan
+[5] - Ganti Guru
+
+Flow Action Guru:
+[0] - Register akun
+[1] - Login
+[2] - Terima Permintaan course siswa
+[3] - Cek jadwal
+[4] - Undur jadwal course(ada urusan penting)
+
+Flow Action Staff:
+[0] - Register akun
+[1] - Login
+[2] - Menentukan Jadwal Course guru dan siswa
+[3] - Laporan Tutor (New Member) 
+[4] - Laporan Keuangan Course
