@@ -1,41 +1,41 @@
 import express from 'express';
-import cors from 'cors';
 import dotenv from 'dotenv';
 
-import RegisRoute from "./src/routes/RegisRoute.js";
+import router from './src/routes/router.js';
 import bodyParser from 'body-parser';
 import connectDB from './src/databases/connection.js';
 
 dotenv.config();
 const app = express();
 
-connectDB(app.listen(5000, () => {
-    console.log('Running at port 5000')
-}));
+connectDB(
+  app.listen(5000, () => {
+    console.log('Running at port 5000');
+  })
+);
 
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 
 app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', '*');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-    next();
-})
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, PATCH, DELETE, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  next();
+});
 
-
-app.use(cors({credentials:true, origin:'http://localhost:5173'}));
 app.use(express.json());
-app.use("/auth", RegisRoute);
 
+app.use('/', router);
+
+app.use('/users', router);
 
 // Middleware Handle Error
 app.use((error, req, res, next) => {
-    const status = error.errorStatus || 500;
-    const message = error.message;
-    const data = error.data;
-    res.json(status).json({
-        message: message, 
-        data: data
-    });
-})
-
+  const status = error.errorStatus || 500;
+  const message = error.message;
+  const data = error.data;
+  res.json(status).json({
+    message: message,
+    data: data,
+  });
+});
