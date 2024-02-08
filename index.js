@@ -8,11 +8,7 @@ import connectDB from './src/databases/connection.js';
 dotenv.config();
 const app = express();
 
-connectDB(
-  app.listen(5000, () => {
-    console.log('Running at port 5000');
-  })
-);
+connectDB();
 
 app.use(bodyParser.json());
 
@@ -38,4 +34,7 @@ app.use((error, req, res, next) => {
     message: message,
     data: data,
   });
+});
+app.listen(5000, () => {
+  console.log(`Server already listening on http://localhost:5000`);
 });

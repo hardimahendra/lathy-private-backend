@@ -17,8 +17,8 @@ router.use(
 router.get('/', testServer);
 
 // Router to send data from front end to mongooDB
-router.post('/register/students', insertTeachers);
-router.post('/register/teachers', insertStudents);
+router.post('/register/teachers', insertTeachers);
+router.post('/register/students', insertStudents);
 router.post('/register/staffs', insertStaff);
 
 router.post('/login', loginUser);

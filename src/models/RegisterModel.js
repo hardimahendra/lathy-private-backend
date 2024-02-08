@@ -3,31 +3,31 @@ import mongoose from 'mongoose';
 export const teachers = mongoose.model(
   'guru',
   new mongoose.Schema({
-    nameGuru: {
+    name: {
       type: 'string',
       required: true,
     },
-    emailGuru: {
+    email: {
       type: 'string',
       required: true,
     },
-    genderGuru: {
+    gender: {
       type: 'string',
       required: true,
     },
-    schoolGuru: {
+    school: {
       type: 'string',
       required: true,
     },
-    teachingHistory: {
+    experience: {
       type: 'string',
       required: true,
     },
-    masteredLearning: {
+    learningSkill: {
       type: 'string',
       required: true,
     },
-    passGuru: {
+    password: {
       type: 'string',
       required: true,
     },
@@ -37,23 +37,23 @@ export const teachers = mongoose.model(
 export const students = mongoose.model(
   'siswa',
   new mongoose.Schema({
-    nameSiswa: {
+    name: {
       type: 'string',
       required: true,
     },
-    emailSiswa: {
+    email: {
       type: 'string',
       required: true,
     },
-    genderSiswa: {
+    gender: {
       type: 'string',
       required: true,
     },
-    schoolSiswa: {
+    school: {
       type: 'string',
       required: true,
     },
-    passSiswa: {
+    password: {
       type: 'string',
       required: true,
     },
@@ -62,19 +62,19 @@ export const students = mongoose.model(
 export const staffs = mongoose.model(
   'staff',
   new mongoose.Schema({
-    nameStaff: {
+    name: {
       type: 'string',
       required: true,
     },
-    emailStaff: {
+    email: {
       type: 'string',
       required: true,
     },
-    genderStaff: {
+    gender: {
       type: 'string',
       required: true,
     },
-    schoolStaff: {
+    school: {
       type: 'string',
       required: true,
     },
@@ -82,11 +82,11 @@ export const staffs = mongoose.model(
       type: 'string',
       required: true,
     },
-    lengthOfWork: {
+    experience: {
       type: 'string',
       required: true,
     },
-    passStaff: {
+    password: {
       type: 'string',
       required: true,
     },
