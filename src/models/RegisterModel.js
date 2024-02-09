@@ -10,6 +10,7 @@ export const teachers = mongoose.model(
     email: {
       type: 'string',
       required: true,
+      unique: true,
     },
     gender: {
       type: 'string',
@@ -44,6 +45,7 @@ export const students = mongoose.model(
     email: {
       type: 'string',
       required: true,
+      unique: true,
     },
     gender: {
       type: 'string',
@@ -69,6 +71,7 @@ export const staffs = mongoose.model(
     email: {
       type: 'string',
       required: true,
+      unique: true,
     },
     gender: {
       type: 'string',

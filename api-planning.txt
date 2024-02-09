@@ -24,42 +24,42 @@ GROUP: Authentication
 /siswa
 req: 
 {
-    "nameSiswa" : "yourname",
-    "emailSiswa": "yourSiswa@gmail.com",
-    "jenisKelamin": "male/female",
-    "schoolSiswa": "your school",
-    "passSiswa": "your pass"
+    "name" : "yourname",
+    "email": "yourSiswa@gmail.com",
+    "gender": "male/female",
+    "school": "your school",
+    "password": "your pass"
 }
 
 /guru
 req: 
 {
-    "nameGuru" : "yourname",
-    "emailGuru": "yourGuru@gmail.com",
-    "jenisKelamin": "male/female",
-    "schoolGuru": "your school",
-    "teachingHistory": "sma 1 jakarta",
-    "masteredLearning": "matematika",
-    "passGuru": "your pass"
+    "name" : "yourname",
+    "email": "yourGuru@gmail.com",
+    "gender": "male/female",
+    "school": "your school",
+    "experience": "2 years",
+    "learningSkill": "matematika",
+    "password": "your pass"
 }
 
 /staff
 req: 
 {
-    "nameStaff" : "yourname",
-    "emailStaff": "yourStaff@gmail.com",
-    "jenisKelamin": "male/female",
-    "schoolStaff": "your school",
-    "job": "sma 1 jakarta",
-    "lengthOfWork": "matematika",
-    "passStaff": "your pass"
+    "name" : "yourname",
+    "email": "yourStaff@gmail.com",
+    "gender": "male/female",
+    "school": "your school",
+    "job": "teacher",
+    "experience": "2 years",
+    "password": "your pass"
 }
  
 err-respons: 
 400 - Input yang anda masukan tidak valid 
 
 [2] - Login 
-{root.api}/{version}/auth/login
+{root.api}/users/login
 
 /siswa && /guru && /staff
 req:
