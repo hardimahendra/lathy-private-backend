@@ -6,7 +6,7 @@ const User = mongoose.model(
     id: Number,
     username: String,
     phone: Number,
-    date: Date(),
+    date: { type: Date, default: Date.now },
     email: {
       type: String,
       unique: true,
@@ -18,7 +18,7 @@ const User = mongoose.model(
       data: Buffer,
       contentType: String,
     },
-    roles: String,
+
     isActive: Boolean,
   })
 );
