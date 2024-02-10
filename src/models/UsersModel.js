@@ -3,19 +3,23 @@ import mongoose from 'mongoose';
 const User = mongoose.model(
   'user',
   new mongoose.Schema({
-    id: 'number',
-    username: 'string',
+    id: Number,
+    username: String,
+    phone: Number,
+    date: Date(),
     email: {
-      type: 'string',
+      type: String,
       unique: true,
     },
     password: {
-      type: 'string',
+      type: String,
     },
-    images: {},
-    phone: {},
-    createdAt: {},
-    isActive: {},
+    images: {
+      data: Buffer,
+      contentType: String,
+    },
+    roles: String,
+    isActive: Boolean,
   })
 );
 
