@@ -10,15 +10,16 @@ const User = mongoose.model(
     email: {
       type: String,
       unique: true,
+      require: true,
     },
     password: {
       type: String,
+      require: true,
     },
     images: {
       data: Buffer,
       contentType: String,
     },
-
     isActive: Boolean,
   })
 );

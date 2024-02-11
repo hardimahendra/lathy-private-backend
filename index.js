@@ -1,9 +1,10 @@
 import express from 'express';
 import dotenv from 'dotenv';
-
 import router from './src/routes/router.js';
 import bodyParser from 'body-parser';
 import connectDB from './src/databases/connection.js';
+import cookieParser from 'cookie-parser';
+
 
 dotenv.config();
 const app = express();
@@ -11,6 +12,8 @@ const app = express();
 connectDB();
 
 app.use(bodyParser.json());
+app.use(cookieParser());
+app.use(express.urlencoded({ extended: false }));
 
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
