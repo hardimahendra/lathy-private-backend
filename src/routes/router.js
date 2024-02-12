@@ -1,8 +1,5 @@
 import express from 'express';
-import cors from 'cors';
-
 const router = express.Router();
-
 
 import { login, register, profile } from '../controller/UserController.js';
 
