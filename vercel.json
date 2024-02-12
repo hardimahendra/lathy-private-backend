@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "builds": [{ "src": "*.js", "use": "@vercel/node" }],
   "headers": [
     {
       "source": "/(.*)",
@@ -11,7 +12,6 @@
       ]
     }
   ],
-  "builds": [{ "src": "*.js", "use": "@vercel/node" }],
   "routes": [
     {
       "src": "/(.*)",
