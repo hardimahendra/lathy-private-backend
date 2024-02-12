@@ -3,9 +3,8 @@ import cors from 'cors';
 
 const router = express.Router();
 
-import { insertTeachers, insertStudents, insertStaff } from '../controller/RegisterController.js';
 import testServer from '../controller/testServer.js';
-import { loginUser, register, getProfile } from '../controller/UserController.js';
+import { login, register, profile } from '../controller/UserController.js';
 
 router.use(
   cors({
@@ -16,14 +15,9 @@ router.use(
 
 router.get('/', testServer);
 
-// Router to send data from front end to mongooDB
-router.post('/register/teachers', insertTeachers);
-router.post('/register/students', insertStudents);
-router.post('/register/staffs', insertStaff);
+router.post('/register', register);
+router.post('/login', login);
 
-router.post('/register/admin', register);
-router.post('/login', loginUser);
-
-router.get('/profile', getProfile);
+router.get('/profile', profile);
 
 export default router;

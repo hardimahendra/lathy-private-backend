@@ -33,7 +33,7 @@ export const register = async (req, res) => {
   }
 };
 
-export const loginUser = async (req, res) => {
+export const login = async (req, res) => {
   try {
     const { email, password } = req.body;
     const user = await User.findOne({ email });
@@ -55,13 +55,13 @@ export const loginUser = async (req, res) => {
   }
 };
 
-export const getProfile = (req, res) => {
+export const profile = (req, res) => {
   const { token } = req.cookies;
   if (token) {
     jwt.verify(token, process.env.ACCESS_TOKEN, {}, (err, user) => {
       if (err) throw err;
       res.json(user);
-    })
+    });
   } else {
     res.json(null);
   }
