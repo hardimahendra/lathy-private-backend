@@ -4,10 +4,18 @@ import router from './src/routes/router.js';
 import bodyParser from 'body-parser';
 import connectDB from './src/databases/connection.js';
 import cookieParser from 'cookie-parser';
+import cors from 'cors';
 
+const app = express();
+app.use(
+  cors({
+    origin: ['https://lathy-private.vercel.app'],
+    methods: ['POST', 'GET'],
+    credentials: true,
+  })
+);
 
 dotenv.config();
-const app = express();
 
 connectDB();
 
