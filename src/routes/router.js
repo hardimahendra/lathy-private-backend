@@ -6,14 +6,6 @@ const router = express.Router();
 
 import { login, register, profile } from '../controller/UserController.js';
 
-router.use(
-  cors({
-    origin: ['https://lathy-private.vercel.app'],
-    credentials: true,
-  })
-);
-
-
 router.post('/register', register);
 router.post('/login', login);
 
