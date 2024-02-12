@@ -7,6 +7,7 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors';
 
 const app = express();
+dotenv.config();
 app.use(
   cors({
     origin: ['https://lathy-private.vercel.app'],
@@ -14,11 +15,8 @@ app.use(
     credentials: true,
   })
 );
-
-dotenv.config();
-
 connectDB();
-
+  
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
