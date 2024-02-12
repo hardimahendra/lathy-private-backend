@@ -9,7 +9,7 @@ import cors from 'cors';
 const app = express();
 app.use(
   cors({
-    origin: ['https://lathy-private.vercel.app'],
+    origin: ['https://lathy-private.vercel.app/'],
     methods: ['POST', 'GET'],
     credentials: true,
   })
