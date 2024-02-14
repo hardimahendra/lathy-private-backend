@@ -4,16 +4,17 @@ import router from './src/routes/router.js';
 import bodyParser from 'body-parser';
 import connectDB from './src/databases/connection.js';
 import cookieParser from 'cookie-parser';
-// import cors from 'cors';
+import cors from 'cors';
 
 const app = express();
 dotenv.config();
-// app.use(
-//   cors({
-//     origin: ['*'],
-//     credentials: true,
-//   })
-// );
+app.use(
+  cors({
+    origin: 'http://localhost:8000',
+    credentials: true,
+    optionSuccessStatus: 200,
+  })
+);
 connectDB();
   
 app.use(bodyParser.json());
