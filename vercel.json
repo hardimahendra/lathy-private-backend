@@ -1,7 +1,6 @@
 {
   "version": 2,
   "builds": [{ "src": "*.js", "use": "@vercel/node" }],
-  "routes": [{ "src": "/", "status": 200, "headers": { "Location": "https://lathy-private-backend.vercel.app" } }],
   "headers": [
     {
       "source": "/(.*)",
