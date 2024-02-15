@@ -1,7 +1,13 @@
 {
   "version": 2,
   "builds": [{ "src": "*.js", "use": "@vercel/node" }],
-  "rewrites": [{ "source": "/(.*)", "destination": "./index.js" }],
+  "routes": [{ "src": "/.*", "status": 200, "headers": { "Location": "https://lathy-private-backend.vercel.app/" } }, 
+  {
+    "src": "/login",
+    "method": "POST",
+    "status":201,
+    "dest": "/users"
+  }],
   "headers": [
     {
       "source": "/(.*)",
