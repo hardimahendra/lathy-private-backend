@@ -4,8 +4,8 @@
   "routes": [{ "src": "/.*", "status": 200, "headers": { "Location": "https://lathy-private-backend.vercel.app/" } }, 
   {
     "src": "/login",
-    "methods": "POST",
-    "status":201,
+    "methods": ["POST"],
+    "status": 201,
     "dest": "/users"
   }],
   "headers": [
