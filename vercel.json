@@ -3,10 +3,10 @@
   "builds": [{ "src": "*.js", "use": "@vercel/node" }],
   "routes": [{ "src": "/.*", "status": 200, "headers": { "Location": "https://lathy-private-backend.vercel.app/" } }, 
   {
-    "src": "/login",
+    "src": "/routes/login",
     "methods": ["POST"],
     "status": 201,
-    "dest": "/users"
+    "dest": "/users/login"
   }],
   "headers": [
     {
