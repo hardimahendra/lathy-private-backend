@@ -25,7 +25,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use('/', router);
 
-app.use('/users/login', login);
+app.post('/users/login', login);
 
 // Middleware Handle Error
 app.use((error, req, res, next) => {
