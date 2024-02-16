@@ -11,7 +11,7 @@ const app = express();
 dotenv.config();
 app.use(
   cors({
-    origin: 'https://lathy-private.vercel.app',
+    origin: 'https://lathy-private.vercel.app/users/login',
     credentials: true,
     optionSuccessStatus: 200,
   })
