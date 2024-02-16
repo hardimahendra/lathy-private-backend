@@ -5,13 +5,13 @@ import bodyParser from 'body-parser';
 import connectDB from './src/databases/connection.js';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
-import { login } from './controller/UserController.js';
+import { login } from './src/controller/UserController.js';
 
 const app = express();
 dotenv.config();
 app.use(
   cors({
-    origin: 'https://lathy-private.vercel.app/users/login',
+    origin: 'https://lathy-private.vercel.app',
     credentials: true,
     optionSuccessStatus: 200,
   })
