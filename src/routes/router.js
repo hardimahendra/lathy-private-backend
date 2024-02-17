@@ -3,7 +3,7 @@ const router = express.Router();
 import { login, register, profile } from '../controller/UserController.js';
 
 router.get('/', (req, res) => {
-  res.json(console.log('Server Is RUNNING!!!'));
+  res.json('Serveri is Already Running!!!');
 });
 
 router.post('/register', register);
