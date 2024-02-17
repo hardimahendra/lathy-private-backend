@@ -5,8 +5,6 @@ import bodyParser from 'body-parser';
 import connectDB from './src/databases/connection.js';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
-import { login } from './src/controller/UserController.js';
-
 const app = express();
 dotenv.config();
 app.use(
@@ -21,11 +19,8 @@ connectDB();
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
-
 app.use(express.json());
 app.use('/', router);
-
-app.post('/users/login', login);
 
 // Middleware Handle Error
 app.use((error, req, res, next) => {
