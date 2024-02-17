@@ -6,8 +6,8 @@ router.get('/', (req, res) => {
   res.json(console.log('Server Is RUNNING!!!'));
 });
 
-router.post('/users/register', register);
-router.post('/users/login', login);
+router.post('/register', register);
+router.post('/login', login);
 
 router.get('/profile', profile);
 
