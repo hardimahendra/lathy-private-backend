@@ -51,9 +51,9 @@ export const login = async (req, res) => {
     }
     const match = await comparePassword(password, user.password);
     if (match) {
-      // jwt.sign({ email: user.email, id: user._id, username: user.username }, process.env.ACCESS_TOKEN, {}, (err, token) => {
-      //   res.cookie('token', token).json(user);
-      // });
+      jwt.sign({ email: user.email, id: user._id, username: user.username }, process.env.ACCESS_TOKEN, {}, (err, token) => {
+        res.cookie('token', token).json(user);
+      });
       res.json('passord match');
     }
     if (!match) {
