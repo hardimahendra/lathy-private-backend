@@ -2,6 +2,15 @@ import User from '../models/UsersModel.js';
 import { hashPasword, comparePassword } from '../helpers/auth.js';
 import jwt from 'jsonwebtoken';
 
+export const getUser = async (req, res) => {
+  try {
+    const user = req.User;
+    res.render(user);
+  } catch (error) {
+    res.json(error);
+  }
+};
+
 export const register = async (req, res) => {
   try {
     const { username, email, password } = req.body;
@@ -42,9 +51,9 @@ export const login = async (req, res) => {
     }
     const match = await comparePassword(password, user.password);
     if (match) {
-      jwt.sign({ email: user.email, id: user._id, username: user.username }, process.env.ACCESS_TOKEN, {}, (err, token) => {
-        res.cookie('token', token).json(user);
-      });
+      // jwt.sign({ email: user.email, id: user._id, username: user.username }, process.env.ACCESS_TOKEN, {}, (err, token) => {
+      //   res.cookie('token', token).json(user);
+      // });
       res.json('passord match');
     }
     if (!match) {
